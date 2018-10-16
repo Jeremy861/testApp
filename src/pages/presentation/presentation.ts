@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SkillPage } from '../skill/skill';
 
 /**
  * Generated class for the PresentationPage page.
@@ -15,14 +16,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PresentationPage {
 
-  pet: string = "puppies";
-  isAndroid: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PresentationPage');
+  }
+
+  display(item: String){
+    console.log(item)
+    if(item !=''){
+      this.navCtrl.push(SkillPage, {skill: item});
+    }
   }
 
 }

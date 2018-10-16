@@ -10,6 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PresentationPage } from '../pages/presentation/presentation';
 import { FormPage } from '../pages/form/form';
+import { SkillPage } from '../pages/skill/skill';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormPage } from '../pages/form/form';
     HomePage,
     ListPage,
     PresentationPage,
-    FormPage
+    FormPage,
+    SkillPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { FormPage } from '../pages/form/form';
     HomePage,
     ListPage,
     PresentationPage,
-    FormPage
+    FormPage,
+    SkillPage
   ],
   providers: [
     StatusBar,
