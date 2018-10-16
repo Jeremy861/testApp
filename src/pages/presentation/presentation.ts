@@ -15,9 +15,28 @@ import { SkillPage } from '../skill/skill';
   templateUrl: 'presentation.html'
 })
 export class PresentationPage {
+  mySkills = 'webskills'
+  webskills: Array<{title: string, note: string, icon: string, description: string}>;
+  mobileskills: Array<{title: string, note: string, icon: string, description: string}>;
+  accountingskills: Array<{title: string, note: string, icon: string, description: string}>;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.webskills = 
+    [{title: 'Html', note: '05', icon:'Hand', description:'Azerty'},
+    {title: 'CSS', note: '05', icon:'Hand', description:'Azerty'},
+    {title: 'JavaScript', note: '05', icon:'Hand', description:'Azerty'},
+    {title: 'Photoshop', note: '05', icon:'Hand', description:'Azerty'}];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {    
+    this.mobileskills =
+    [{title: 'Java', note: '05', icon:'Hand', description:'Azerty'},
+    {title: 'Swift', note: '05', icon:'Hand', description:'Azerty'},
+    {title: 'TypeScript', note: '05', icon:'Hand', description:'Azerty'},
+    {title: 'Xml', note: '05', icon:'Hand', description:'Azerty'}];
+
+    this.accountingskills =
+    [{title: 'Winbooks', note: '05', icon:'Hand', description:'Azerty'},
+    {title: 'Bob50', note: '05', icon:'Hand', description:'Azerty'},
+    {title: 'Excel', note: '05', icon:'Hand', description:'Azerty'}];
   }
 
   ionViewDidLoad() {

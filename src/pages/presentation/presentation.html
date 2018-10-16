@@ -33,81 +33,31 @@
 
 <ion-content padding>
 
+    <ion-list>
+        <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+          <ion-icon [name]="item.icon" item-start></ion-icon>
+          {{item.title}}
+          <div class="item-note" item-end>
+            {{item.note}}
+          </div>
+        </button>
+      </ion-list>
+
 <div [ngSwitch]="mySkills">
 
     <ion-list *ngSwitchCase="'webskills'">
-      <ion-item (click)="display(Html)">
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/logo.png">
-        </ion-thumbnail>
-        <h2>Html</h2>
-      </ion-item>
-      <ion-item (click)="display(CSS)">
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/logo.png">
-        </ion-thumbnail>
-        <h2>CSS</h2>
-      </ion-item>
-      <ion-item (click)="display(Javascript)">
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/logo.png">
-        </ion-thumbnail>
-        <h2>JavaScript</h2>
-      </ion-item>
-      <ion-item (click)="display(Photoshop)"> 
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/logo.png">
-        </ion-thumbnail>
-        <h2>Photoshop</h2>
-      </ion-item>
+      <button ion-item *ngFor="let item of webskills" (click)="display('Html')">
+          <ion-thumbnail item-start>
+              <img src="assets/imgs/logo.png">
+          </ion-thumbnail>
+          <h2>{{item.title}}</h2>         
+      </button>
     </ion-list>
 
     <ion-list *ngSwitchCase="'mobileApps'">
-      <ion-item (click)="display('Java')">
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/logo.png">
-        </ion-thumbnail>
-        <h2>Java</h2>
-      </ion-item>
-      <ion-item (click)="display('Swift')"> 
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/logo.png">
-        </ion-thumbnail>
-        <h2>Swift</h2>
-      </ion-item>
-      <ion-item (click)="display('Typescript')">
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/logo.png">
-        </ion-thumbnail>
-        <h2>TypeScript</h2>
-      </ion-item>
-      <ion-item (click)="display('Xml')">
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/logo.png">
-        </ion-thumbnail>
-        <h2>Xml</h2>
-      </ion-item>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'accounting'">
-      <ion-item (click)="display('Winbooks')">
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/logo.png">
-        </ion-thumbnail>
-        <h2>Winbooks</h2>
-      </ion-item>
-      <ion-item (click)="display('Bob50')">
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/logo.png">
-        </ion-thumbnail>
-        <h2>Bob50</h2>
-      </ion-item>
-      <ion-item (click)="display('Excel')">
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/logo.png">
-        </ion-thumbnail>
-        <h2>Excel</h2>
-      </ion-item>      
+    <ion-list *ngSwitchCase="'accounting'">   
     </ion-list>
 
   </div>
