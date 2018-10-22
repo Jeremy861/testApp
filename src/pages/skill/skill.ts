@@ -14,11 +14,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'skill.html',
 })
 export class SkillPage {
-  skill;
+  selectedSkill: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.skill = this.navParams.get("skill")
-    console.log(this.skill)
+    this.selectedSkill = this.navParams.get("skillitem")
+    console.log(this.selectedSkill)
   }
 
   ionViewDidLoad() {

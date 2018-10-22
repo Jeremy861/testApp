@@ -33,31 +33,35 @@
 
 <ion-content padding>
 
-    <ion-list>
-        <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-          <ion-icon [name]="item.icon" item-start></ion-icon>
-          {{item.title}}
-          <div class="item-note" item-end>
-            {{item.note}}
-          </div>
-        </button>
-      </ion-list>
+    
 
 <div [ngSwitch]="mySkills">
 
     <ion-list *ngSwitchCase="'webskills'">
-      <button ion-item *ngFor="let item of webskills" (click)="display('Html')">
+      <button ion-item *ngFor="let skillitem of webskills" (click)="display($event, skillitem)">
           <ion-thumbnail item-start>
               <img src="assets/imgs/logo.png">
           </ion-thumbnail>
-          <h2>{{item.title}}</h2>         
+          <h2>{{skillitem.title}}</h2>     
       </button>
-    </ion-list>
+    </ion-list>    
 
     <ion-list *ngSwitchCase="'mobileApps'">
+        <button ion-item *ngFor="let skillitem of mobileskills" (click)="display($event, skillitem)">
+            <ion-thumbnail item-start>
+                <img src="assets/imgs/logo.png">
+            </ion-thumbnail>
+            <h2>{{skillitem.title}}</h2>     
+        </button>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'accounting'">   
+    <ion-list *ngSwitchCase="'accounting'">
+        <button ion-item *ngFor="let skillitem of accountingskills" (click)="display($event, skillitem)">
+            <ion-thumbnail item-start>
+                <img src="assets/imgs/logo.png">
+            </ion-thumbnail>
+            <h2>{{skillitem.title}}</h2>     
+        </button>   
     </ion-list>
 
   </div>

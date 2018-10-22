@@ -43,11 +43,9 @@ export class PresentationPage {
     console.log('ionViewDidLoad PresentationPage');
   }
 
-  display(item: String){
-    console.log(item)
-    if(item !=''){
-      this.navCtrl.push(SkillPage, {skill: item});
-    }
+  display(event, skillitem){
+    //console.log(item)    
+    this.navCtrl.push(SkillPage, {skillitem: skillitem});
   }
 
 }
