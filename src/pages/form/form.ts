@@ -14,9 +14,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'form.html',
 })
 export class FormPage {
+  pdfSrc: string = 'assets/pdf-sample.pdf';
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-
 }

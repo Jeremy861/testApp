@@ -4,19 +4,19 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PresentationPage } from '../pages/presentation/presentation';
 import { FormPage } from '../pages/form/form';
 import { SkillPage } from '../pages/skill/skill';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     PresentationPage,
     FormPage,
     SkillPage
@@ -24,12 +24,12 @@ import { SkillPage } from '../pages/skill/skill';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    PdfViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     PresentationPage,
     FormPage,
     SkillPage
@@ -37,7 +37,11 @@ import { SkillPage } from '../pages/skill/skill';
   providers: [
     StatusBar,
     SplashScreen,
+    SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
+
 export class AppModule {}
+
+//platformBrowserDynamic().bootstrapModule(AppModule);
