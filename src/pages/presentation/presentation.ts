@@ -16,27 +16,21 @@ import { SkillPage } from '../skill/skill';
 })
 export class PresentationPage {
   mySkills = 'webskills'
-  webskills: Array<{title: string, note: string, icon: string, description: string}>;
-  mobileskills: Array<{title: string, note: string, icon: string, description: string}>;
-  accountingskills: Array<{title: string, note: string, icon: string, description: string}>;
+  skillslist: Array<{title: string, note: string, icon: string, description: string, category: string}>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.webskills = 
-    [{title: 'Html', note: '05', icon:'hand', description:'Azerty'},
-    {title: 'CSS', note: '05', icon:'hand', description:'Azerty'},
-    {title: 'JavaScript', note: '05', icon:'hand', description:'Azerty'},
-    {title: 'Photoshop', note: '05', icon:'hand', description:'Azerty'}];
-
-    this.mobileskills =
-    [{title: 'Java', note: '05', icon:'hand', description:'Azerty'},
-    {title: 'Swift', note: '05', icon:'hand', description:'Azerty'},
-    {title: 'TypeScript', note: '05', icon:'hand', description:'Azerty'},
-    {title: 'Xml', note: '05', icon:'hand', description:'Azerty'}];
-
-    this.accountingskills =
-    [{title: 'Winbooks', note: '05', icon:'hand', description:'Azerty'},
-    {title: 'Bob50', note: '05', icon:'hand', description:'Azerty'},
-    {title: 'Excel', note: '05', icon:'hand', description:'Azerty'}];
+    this.skillslist = 
+    [{title: 'Html', note: '05', icon:'hand', description:'Azerty', category:"webskills"},
+    {title: 'CSS', note: '05', icon:'hand', description:'Azerty', category:'webskills'},
+    {title: 'JavaScript', note: '05', icon:'hand', description:'Azerty', category:'webskills'},
+    {title: 'Photoshop', note: '05', icon:'hand', description:'Azerty', category:'webskills'},
+    {title: 'Java', note: '05', icon:'hand', description:'Azerty', category:'mobileskills'},
+    {title: 'Swift', note: '05', icon:'hand', description:'Azerty', category:'mobileskills'},
+    {title: 'TypeScript', note: '05', icon:'hand', description:'Azerty', category:'mobileskills'},
+    {title: 'Xml', note: '05', icon:'hand', description:'Azerty', category:'mobileskills'},
+    {title: 'Winbooks', note: '05', icon:'hand', description:'Azerty', category:'accountingskills'},
+    {title: 'Bob50', note: '05', icon:'hand', description:'Azerty', category:'accountingskills'},
+    {title: 'Excel', note: '05', icon:'hand', description:'Azerty', category:'accountingskills'}];
   }
 
   ionViewDidLoad() {

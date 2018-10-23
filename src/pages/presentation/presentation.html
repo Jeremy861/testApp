@@ -36,16 +36,18 @@
 <div [ngSwitch]="mySkills">
 
     <ion-list *ngSwitchCase="'webskills'">
-      <button ion-item *ngFor="let skillitem of webskills" (click)="display($event, skillitem)">
-          <ion-thumbnail item-start>
-              <img src="assets/imgs/logo.png">
-          </ion-thumbnail>
-          <h2>{{skillitem.title}}</h2>     
+      <button ion-item *ngFor="let skillitem of skillslist" (click)="display($event, skillitem)">
+          <ng-container *ngIf="skillitem.category == 'webskills'">
+              <ion-thumbnail item-start>
+                  <img src="assets/imgs/logo.png">
+              </ion-thumbnail>
+              <h2>{{skillitem.title}}</h2>
+          </ng-container>            
       </button>
     </ion-list>    
 
     <ion-list *ngSwitchCase="'mobileApps'">
-        <button ion-item *ngFor="let skillitem of mobileskills" (click)="display($event, skillitem)">
+        <button ion-item *ngFor="let skillitem of skillslist" skillitem.category="mobileskills" (click)="display($event, skillitem)">
             <ion-thumbnail item-start>
                 <img src="assets/imgs/logo.png">
             </ion-thumbnail>
@@ -54,11 +56,13 @@
     </ion-list>
 
     <ion-list *ngSwitchCase="'accounting'">
-        <button ion-item *ngFor="let skillitem of accountingskills" (click)="display($event, skillitem)">
-            <ion-thumbnail item-start>
-                <img src="assets/imgs/logo.png">
-            </ion-thumbnail>
-            <h2>{{skillitem.title}}</h2>     
+        <button ion-item *ngFor="let skillitem of skillslist" category="accountingskills" (click)="display($event, skillitem)">
+            <ng-container *ngIf="skillitem.category == 'accountingskills'">
+                <ion-thumbnail item-start>
+                    <img src="assets/imgs/logo.png">
+                </ion-thumbnail>
+                <h2>{{skillitem.title}}</h2>
+            </ng-container>    
         </button>   
     </ion-list>
 

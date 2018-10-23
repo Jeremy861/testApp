@@ -12,6 +12,7 @@ import { FormPage } from '../pages/form/form';
 import { SkillPage } from '../pages/skill/skill';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { SafariViewController } from '@ionic-native/safari-view-controller';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
   providers: [
     StatusBar,
     SplashScreen,
+    SafariViewController,
     SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
